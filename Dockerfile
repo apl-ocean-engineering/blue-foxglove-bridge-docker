@@ -6,6 +6,8 @@ FROM ros:$ROS_DISTRO-ros-base AS foxglove-bridge
 RUN apt-get -q update \
     && apt-get -q -y upgrade \
     && apt-get -q install --no-install-recommends -y \
+    "ros-${ROS_DISTRO}-control-msgs" \
+    "ros-${ROS_DISTRO}-controller-manager-msgs" \
     "ros-${ROS_DISTRO}-foxglove-bridge" \
     "ros-${ROS_DISTRO}-mavros-msgs" \
     && apt-get autoremove -y \
