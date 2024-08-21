@@ -7,6 +7,7 @@ RUN apt-get -q update \
     && apt-get -q -y upgrade \
     && apt-get -q install --no-install-recommends -y \
     "ros-${ROS_DISTRO}-foxglove-bridge" \
+    "ros-${ROS_DISTRO}-mavros-msgs" \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf "/var/lib/apt/lists/*"
